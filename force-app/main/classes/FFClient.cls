@@ -39,8 +39,8 @@ public class FFClient {
     }
 
     private String getEvalCacheKey(String identifier, String target) {
-        return config.getCache().getCacheNamespace() + '.' + config.getCache().getCachePartition() + '.feature' + this.removeSpecChars(identifier) +
-                removeSpecChars(target);
+        return config.getCache().getCacheNamespace() + '.' + config.getCache().getCachePartition() + '.' + this.removeSpecChars(identifier);
+                
     }
 
     private String removeSpecChars(String s) {
