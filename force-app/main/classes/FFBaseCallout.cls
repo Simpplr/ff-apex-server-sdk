@@ -2,10 +2,9 @@ public class FFBaseCallout extends FFBase.ApiClient {
 
     private String token;
 
-    public FFBaseCallout(FFConfig config) {
-        basePath = config.getBaseUrl();
-        String packageName = FFBaseCallout.class.getName().substringBefore('FFBaseCallout').substringBefore('.').toLowerCase();
-        calloutName = String.isBlank(packageName) ? 'ff_client_apis' : (packageName + '__ff_client_apis');
+    public FFBaseCallout(String baseUrl, String name) {
+        basePath = baseUrl;
+        calloutName = name;
         authentications.put('ApiKeyAuth', new FFBase.ApiKeyHeaderAuth('api-key'));
     }
 
